@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block body %}
+    <table>
+        <tr>
+            <th>Langt nafn</th>
+            <th>Stutt nafn</th>
+            <th>Gengi</th>
+        </tr>
+        {% for currency in data['results'] %}
+            <tr>
+                <td>{{ currency['longName'] }}</td>
+                <td>{{ currency['shortName'] }}</td>
+                <td>{{ currency['value'] }}</td>
+            </tr>
+        {% endfor %}
+    </table>
+{% endblock %}
