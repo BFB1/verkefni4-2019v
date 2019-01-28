@@ -7,7 +7,10 @@ app = Flask(__name__)
 
 @app.route('/')
 def hello_world():
-    raw_data = get('https://apis.is/currency/arion').content
+    try:
+        raw_data = get('https://apis.is/currency/arion').content
+    except ConnectionError:
+        return 'Gat ekki tengsts apis.is'
     data = loads(raw_data)
     return render_template('home.html', data=data)
 
