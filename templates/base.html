@@ -3,9 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <title>Gengi</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css' ) }}">
 </head>
 <body>
-    {% block body %}
-    {% endblock %}
+    <div class="wrapper">
+        {% block body %}
+        {% endblock %}
+    </div>
 </body>
 </html>
